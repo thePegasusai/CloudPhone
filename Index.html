@@ -14,6 +14,22 @@
     <script>
       // Your code will go here
       // open up your console - if everything loaded properly you should see the latest ml5 version
+
+const video = document.getElementById('video');
+
+// Create a new poseNet method
+const poseNet = ml5.poseNet(video, modelLoaded);
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+// Listen to new 'pose' events
+poseNet.on('pose', (results) => {
+  poses = results;
+});
+
+
       console.log('ml5 version:', ml5.version);
 
       function setup() {
