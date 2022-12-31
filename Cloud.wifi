@@ -1,0 +1,16 @@
+from ipaddr import IPNetwork
+
+# Specify the networks to add to the routing table
+networks = [
+    IPNetwork('192.168.1.0/24'),
+    IPNetwork('172.16.0.0/12'),
+]
+
+# Create a script to restore the routing table
+script = ""
+for network in networks:
+    script += f"ip route add {network} \n"
+
+# Write the script to a file
+with open('restore_routing.sh', 'w') as f:
+    f.write(script)
