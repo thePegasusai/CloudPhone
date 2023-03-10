@@ -1,3 +1,6 @@
+from IPython.core.display import HTML
+
+
 <!DOCTYPE html>
 <html>
 <head>
