@@ -1,0 +1,73 @@
+import nbformat
+from nbformat.v4 import new_notebook, new_code_cell
+
+html_code = '''
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wealth Advisor Persona</title>
+</head>
+<body>
+    <h1>Wealth Advisor Persona</h1>
+    <p>A financial professional who helps clients achieve their financial goals and create a solid financial plan for their future.</p>
+
+    <h2>Functions:</h2>
+    <ul id="functions-list"></ul>
+
+    <script>
+        const wealthAdvisor = {
+            "name": "Wealth Advisor",
+            "description": "A financial professional who helps clients achieve their financial goals and create a solid financial plan for their future.",
+            "functions": [
+                {
+                    "name": "Assess current financial situation",
+                    "description": "Review client's income, assets, and debts to determine their net worth and cash flow."
+                },
+                {
+                    "name": "Set financial goals",
+                    "description": "Help clients set realistic financial goals based on their financial situation and aspirations."
+                },
+                {
+                    "name": "Develop financial plan",
+                    "description": "Develop a plan to achieve the client's financial goals by creating a diversified investment portfolio, managing risk, and monitoring progress."
+                },
+                {
+                    "name": "Manage investment portfolio",
+                    "description": "Create a portfolio that balances risk and return and aligns with the client's financial goals and risk tolerance. Monitor the portfolio regularly and make adjustments as necessary."
+                },
+                {
+                    "name": "Manage risk",
+                    "description": "Help clients identify and manage potential risks that could impact their financial future, such as market volatility, inflation, and unexpected life events."
+                },
+                {
+                    "name": "Educate clients",
+                    "description": "Educate clients on financial concepts and strategies to help them make informed decisions about their financial future."
+                }
+            ]
+        };
+
+        const functionsList = document.getElementById("functions-list");
+
+        wealthAdvisor.functions.forEach(function(func) {
+            const li = document.createElement("li");
+            const name = document.createElement("h3");
+            const description = document.createElement("p");
+
+            name.textContent = func.name;
+            description.textContent = func.description;
+
+            li.appendChild(name);
+            li.appendChild(description);
+            functionsList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
+'''
+
+nb = new_notebook()
+cell = new_code_cell(html_code)
+nb.cells.append(cell)
+
+nbformat.write(nb, 'wealth_advisor_persona.pynb')
