@@ -6,7 +6,7 @@ The equation describes the time it takes for the object to reach a certain point
 
 ||In this example, we first include the Wowza Player JavaScript API script tag in the head of the HTML file. We then create a div element with an ID of player where we will insert the video player.
 
-In the script tag, we create a playerElement variable by selecting the player element using document.getElementById(). We then create a new player instance using the WowzaPlayer.create() method, passing in the playerElement and an object with the player configuration options.
+#In the script tag, we create a playerElement variable by selecting the player element using document.getElementById(). We then create a new player instance using the WowzaPlayer.create() method, passing in the playerElement and an object with the player configuration options.
 
 In this case, we specify the Wowza Player license key and the source URL of the live stream we want to play. Note that you would need to replace the license key and source URL with your own values.
 (written in JavaScript) 
